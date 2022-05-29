@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap');
+@import "node_modules/bootstrap/scss/bootstrap";
+    @import 'react-toastify/dist/ReactToastify.css';
+* {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  .icon {
+    border: 1px solid #f3f3f3;
+      border-top: 1px solid #3498db;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
