@@ -59,7 +59,6 @@ function App() {
             </GuardedRoute>
           }
         />
-
         <Route
           path="/login"
           element={

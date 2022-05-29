@@ -14,7 +14,7 @@ const IncomeListStyle = styled.div`
 
 function IncomeList(props: IIncomeListProps): React.ReactElement {
   return (
-    <IncomeListStyle className="card">
+    <IncomeListStyle className="card w-100">
       <div className="card-header">{props.title}</div>
       <ul className="list-group list-group-flush">
         {props.isLoading ? (

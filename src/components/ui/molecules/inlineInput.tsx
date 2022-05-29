@@ -8,7 +8,7 @@ export type IInlineInputProps = {
 
 function InlineInput(props: IInlineInputProps): React.ReactElement {
   return (
-    <div className="col-auto">
+    <div className="col-md-auto col-12 mt-2">
       <BasicInput
         className={[
           props.feedback ? "is-invalid" : "",

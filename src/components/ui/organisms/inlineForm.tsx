@@ -12,8 +12,8 @@ function InlineForm(props: IInlineFormProps): React.ReactElement {
       {props.inlineForm.map((el, i) => (
         <React.Fragment key={i}>{el}</React.Fragment>
       ))}
-      <div className="col-auto">
-        <BasicButton {...props.basicButton} />
+      <div className="col-md-auto col-12 mt-2">
+        <BasicButton className="w-100" {...props.basicButton} />
       </div>
     </form>
   );

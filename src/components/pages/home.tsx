@@ -200,7 +200,7 @@ function Home() {
           ]}
         />
       </Incomes>
-      <ChartSection>
+      <ChartSection className="col-md-4 col-12">
         <div className="card">
           <div className="card-header">Resumo da Carteira</div>
           <div className="card-body">

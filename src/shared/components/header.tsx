@@ -6,7 +6,6 @@ import React from "react";
 export type IHeaderProps = {
   image: string;
   alt: string;
-  title: string;
   actionButton: IBasicButtonProps;
 };
 

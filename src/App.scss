@@ -26,6 +26,18 @@ body {
   }
 }
 
+.card {
+  border: none;
+  .card-header {
+    background-color: rgb(188 188 189 / 31%);
+    border-bottom: none;
+  }
+}
+
+.btn,.card {
+  border-radius: 2px;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
