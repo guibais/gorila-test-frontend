@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import DefaultForm from "../ui/organisms/defaultForm";
-import GorilaLogo from "../../assets/images/icon_gorila.png";
+import GorilaLogo from "../../assets/images/LogoGorila.svg";
 import { UserService } from "../../services/user.service";
 import { ButtonType } from "../ui/atoms/BasicButton";
 import { LocalService } from "../../services/local.service";

@@ -9,7 +9,7 @@ import { LocalPersistence } from "./shared/localPersistence";
 import UnGuardedRoute from "./shared/components/unguardedRoute";
 import Register from "./components/pages/register";
 import { Header } from "./shared/components/header";
-import GorilaLogo from "./assets/images/icon_gorila.png";
+import GorilaLogo from "./assets/images/LogoGorila.svg";
 import { LocalService } from "./services/local.service";
 import React from "react";
 
@@ -41,7 +41,6 @@ function App() {
         <Header
           image={GorilaLogo}
           alt="Gorila Logo"
-          title="Gorila App"
           actionButton={{
             children: "Sair",
             onClick: () => {

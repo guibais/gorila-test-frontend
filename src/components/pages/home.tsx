@@ -166,7 +166,7 @@ function Home() {
           />,
         ]}
         basicButton={{
-          children: "Criar",
+          children: "Adicionar",
           onClick: () => {
             submitIncome();
           },
@@ -204,28 +204,36 @@ function Home() {
         <div className="card">
           <div className="card-header">Resumo da Carteira</div>
           <div className="card-body">
-            <SimpleChart
-              data={{
-                labels: [
-                  `Renda Fixa ${fixedTotalPerc.toFixed(2)}%`,
-                  `Renda Variável ${variableTotalPerc.toFixed(2)}%`,
-                ],
-                datasets: [
-                  {
-                    data: [fixedTotal, variableTotal],
-                    backgroundColor: [
-                      "rgba(255, 99, 132, 0.2)",
-                      "rgba(54, 162, 235, 0.2)",
-                    ],
-                    borderColor: [
-                      "rgba(255, 99, 132, 1)",
-                      "rgba(54, 162, 235, 1)",
-                    ],
-                    borderWidth: 1,
-                  },
-                ],
-              }}
-            ></SimpleChart>
+            {isLoading ? (
+              <div className="loader">
+                <div className="icon" />
+              </div>
+            ) : fixedTotal != 0 && variableTotal != 0 ? (
+              <SimpleChart
+                data={{
+                  labels: [
+                    `Renda Fixa ${fixedTotalPerc.toFixed(2)}%`,
+                    `Renda Variável ${variableTotalPerc.toFixed(2)}%`,
+                  ],
+                  datasets: [
+                    {
+                      data: [fixedTotal, variableTotal],
+                      backgroundColor: [
+                        "rgba(255, 99, 132, 0.2)",
+                        "rgba(54, 162, 235, 0.2)",
+                      ],
+                      borderColor: [
+                        "rgba(255, 99, 132, 1)",
+                        "rgba(54, 162, 235, 1)",
+                      ],
+                      borderWidth: 1,
+                    },
+                  ],
+                }}
+              ></SimpleChart>
+            ) : (
+              "Nenhum dado inserido"
+            )}
           </div>
         </div>
       </ChartSection>

@@ -56,7 +56,7 @@ const Income = (props: IIncomeProps): React.ReactElement => {
           </PillStyle>
         ) : null}
         {props.date ? [format(new Date(props.date), "dd-MM-yyyy")] : null}{" "}
-        {props.currency ? "R$" : ""}
+        {props.currency ? props.currency : ""}
         {props.value}
         {props.action ? (
           <ActionButton

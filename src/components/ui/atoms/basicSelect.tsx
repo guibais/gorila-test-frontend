@@ -13,7 +13,6 @@ export type IBasicInputOptionsProps = {
 
 export type IBasicSelectProps = {
   className?: string;
-  children?: React.ReactNode;
   options: IBasicInputOptionsProps[];
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => any;
 };

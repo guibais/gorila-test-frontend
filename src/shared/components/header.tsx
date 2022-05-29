@@ -18,11 +18,9 @@ export function Header(props: IHeaderProps) {
           <img
             src={props.image}
             alt={props.alt}
-            width="30"
-            height="24"
+            width="100"
             className="d-inline-block align-text-top me-2"
           />
-          {props.title}
         </a>
         <BasicButton {...props.actionButton} />
       </div>
