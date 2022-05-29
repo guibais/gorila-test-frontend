@@ -9,7 +9,7 @@ function IncomePanel(props: IIncomePanelProps): React.ReactElement {
   return (
     <div className="row">
       {props.list.map((form, i) => (
-        <div key={i} className="col-6">
+        <div key={i} className="col-md-6">
           <IncomeList {...form} />
         </div>
       ))}

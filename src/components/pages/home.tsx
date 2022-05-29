@@ -10,6 +10,23 @@ import IncomePanel from "../ui/organisms/incomePanel";
 import InlineForm from "../ui/organisms/inlineForm";
 import { InvestmentsReturnedViewModel } from "../../viewmodel/investmentsReturned.viewmodel";
 import useValidator from "../../shared/hooks/useValidator";
+import styled from "styled-components";
+import { SimpleChart } from "../ui/atoms/simpleChart";
+
+const HomeStyle = styled.div`
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Incomes = styled.section`
+  margin-top: 80px;
+`;
+
+const ChartSection = styled.section`
+  margin: 80px 0;
+`;
 
 function Home() {
   const investmentService = new InvestmentService();
@@ -17,6 +34,7 @@ function Home() {
   const [validator, showValidationMessage] = useValidator();
 
   // States
+  const [isLoading, setIsLoading] = useState(false);
   const [investmentForm, setInvestmentForm] = useState<InvestmentViewModel>({
     type: incomeType.RENDA_FIXA,
     value: "",
@@ -28,12 +46,27 @@ function Home() {
   const [variableInvestments, setVariableInvestments] = useState<
     InvestmentViewModel[]
   >([]);
+  const [fixedTotal, setFixedTotal] = useState(0);
+  const [variableTotal, setVariableTotal] = useState(0);
+  const [fixedTotalPerc, setFixedTotalPerc] = useState(0);
+  const [variableTotalPerc, setVariableTotalPerc] = useState(0);
 
   const loadIncomes = async () => {
+    setIsLoading(true);
     const resp = await investmentService.getAll();
     const incomes = resp.data as InvestmentsReturnedViewModel;
     setFixedInvestments(incomes.fixedInvestments);
     setVariableInvestments(incomes.variableInvestments);
+    setFixedTotal(incomes.totalFixed);
+    setFixedTotalPerc(
+      (100 / (incomes.totalFixed + incomes.totalVariable)) * incomes.totalFixed
+    );
+    setVariableTotal(incomes.totalVariable);
+    setVariableTotalPerc(
+      (100 / (incomes.totalFixed + incomes.totalVariable)) *
+        incomes.totalVariable
+    );
+    setIsLoading(false);
   };
 
   const submitIncome = async () => {
@@ -66,7 +99,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="container">
+    <HomeStyle className="container">
       <PageTitle title="Carteira de Investimentos" />
       <InlineForm
         inlineForm={[
@@ -89,11 +122,12 @@ function Home() {
             input={{
               placeholder: "Valor",
               name: "value",
-              onChange: (e) =>
+              onValueChange: (value) => {
                 setInvestmentForm({
                   ...investmentForm,
-                  value: e.target.value,
-                }),
+                  value: value,
+                });
+              },
               currency: "R$",
             }}
             feedback={validator.message(
@@ -138,11 +172,12 @@ function Home() {
           },
         }}
       />
-      <section className="incomes">
+      <Incomes className="incomes">
         <IncomePanel
           list={[
             {
               title: "Renda Fixa",
+              isLoading,
               incomeList: fixedInvestments.map((investment) => ({
                 date: investment.date.toString(),
                 value: investment.value,
@@ -153,6 +188,7 @@ function Home() {
             },
             {
               title: "Renda Variável",
+              isLoading,
               incomeList: variableInvestments.map((investment) => ({
                 date: investment.date.toString(),
                 value: investment.value,
@@ -163,8 +199,37 @@ function Home() {
             },
           ]}
         />
-      </section>
-    </div>
+      </Incomes>
+      <ChartSection>
+        <div className="card">
+          <div className="card-header">Resumo da Carteira</div>
+          <div className="card-body">
+            <SimpleChart
+              data={{
+                labels: [
+                  `Renda Fixa ${fixedTotalPerc.toFixed(2)}%`,
+                  `Renda Variável ${variableTotalPerc.toFixed(2)}%`,
+                ],
+                datasets: [
+                  {
+                    data: [fixedTotal, variableTotal],
+                    backgroundColor: [
+                      "rgba(255, 99, 132, 0.2)",
+                      "rgba(54, 162, 235, 0.2)",
+                    ],
+                    borderColor: [
+                      "rgba(255, 99, 132, 1)",
+                      "rgba(54, 162, 235, 1)",
+                    ],
+                    borderWidth: 1,
+                  },
+                ],
+              }}
+            ></SimpleChart>
+          </div>
+        </div>
+      </ChartSection>
+    </HomeStyle>
   );
 }
 
