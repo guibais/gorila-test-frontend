@@ -26,3 +26,9 @@ Este frontend foi desenvolvido com React usando o Vite:
 - Utilizando o Storybook
 - Os Testes foram feitos utilizando Jest
 - Foi utilizado também typescript
+
+## Links do Projeto
+
+Web App: https://gorila-dash.netlify.app/
+
+Storybook: https://gorila-dash-storybook.netlify.app/
