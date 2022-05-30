@@ -9,7 +9,9 @@ export function http() {
     headers.Authorization = `Bearer ${token}`;
   }
   return axios.create({
-    baseURL: import.meta.env.API_URL,
+    baseURL: import.meta.env.PROD
+      ? "https://gorila-app-guibais.herokuapp.com"
+      : "http://localhost:3300",
     headers,
   });
 }
