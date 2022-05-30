@@ -1,11 +1,9 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import "../../../App.scss";
-import HomeTemplate from "../../../components/ui/templates/HomeTemplate";
-import PlaceHolder from "../../assets/images/placeholder.png";
-import { ButtonType } from "../../../components/ui/atoms/BasicButton";
 import InlineSelect from "../../../components/ui/molecules/InlineSelect";
 import InlineInput from "../../../components/ui/molecules/inlineInput";
+import HomeTemplate from "../../../components/ui/templates/homeTemplate";
 
 export default {
   HomeTemplate: "Templates/HomeTemplate",

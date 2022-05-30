@@ -2,11 +2,6 @@ import React from "react";
 import { incomeType } from "../../../shared/models/incomeType";
 import InlineInput from "../../ui/molecules/inlineInput";
 import InlineSelect from "../../ui/molecules/InlineSelect";
-import PageTitle from "../../ui/molecules/pageTitle";
-import IncomePanel from "../../ui/organisms/incomePanel";
-import InlineForm from "../../ui/organisms/inlineForm";
-import styled from "styled-components";
-import { SimpleChart } from "../../ui/atoms/simpleChart";
 import { useHomeHook } from "./homeHook";
 import HomeTemplate from "../../ui/templates/homeTemplate";
 
