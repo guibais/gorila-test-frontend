@@ -9,7 +9,7 @@ export function http() {
     headers.Authorization = `Bearer ${token}`;
   }
   return axios.create({
-    baseURL: "http://localhost:3300",
+    baseURL: import.meta.env.API_URL,
     headers,
   });
 }

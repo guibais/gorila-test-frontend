@@ -1,18 +1,7 @@
-import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
+import { AxiosRequestConfig } from "axios";
 import { http } from "./httpClient";
 
 export class ApiImplementation {
-  axiosInstance: AxiosInstance = axios;
-
-  constructor() {
-    this.axiosInstance = axios.create({
-      baseURL: import.meta.env.API_URL,
-      headers: {
-        "Content-type": "application/json",
-      },
-    });
-  }
-
   static get = (url: string, config?: AxiosRequestConfig) =>
     http().get(url, config);
 
