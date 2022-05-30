@@ -26,7 +26,6 @@ function Home() {
       pageTitle={{ title: "Carteira de Investimentos" }}
       form={{
         inlineForm: [
-          fixedTotal,
           <InlineSelect
             key={0}
             select={{
