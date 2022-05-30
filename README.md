@@ -26,6 +26,7 @@ Este frontend foi desenvolvido com React usando o Vite:
 - Utilizando o Storybook
 - Os Testes foram feitos utilizando Jest
 - Foi utilizado também typescript
+- Foi utilizado Husky para pre-commit validando lint, tsc e testes
 
 ## Links do Projeto
 

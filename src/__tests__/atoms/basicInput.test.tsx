@@ -21,7 +21,7 @@ const setup = () => {
   };
 };
 
-test("It should keep a $ in front of the input", () => {
+test("It should keep a R$ in front of the input", () => {
   const { input } = setup();
   fireEvent.change(input!, { target: { value: "123" } });
   expect(input).toHaveValue("R$123");

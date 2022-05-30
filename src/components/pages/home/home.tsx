@@ -124,7 +124,7 @@ function Home() {
       }}
       chartSection={{
         isLoading,
-        showChart: fixedTotal != 0 && variableTotal != 0,
+        showChart: fixedTotal != 0 || variableTotal != 0,
         title: "Resumo da Carteira",
         chart: {
           data: {
