@@ -1,7 +1,7 @@
 import * as React from "react";
 import IncomeList, { IIncomeListProps } from "../molecules/incomeList";
 
-type IIncomePanelProps = {
+export type IIncomePanelProps = {
   list: IIncomeListProps[];
 };
 

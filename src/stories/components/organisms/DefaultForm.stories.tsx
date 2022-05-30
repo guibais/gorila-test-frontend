@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import "../../../App.scss";
 import DefaultForm from "../../../components/ui/organisms/defaultForm";
+import PlaceHolder from "../../assets/images/placeholder.png";
 
 export default {
   DefaultForm: "Organisms/DefaultForm",
@@ -16,7 +17,7 @@ export const Default = Template.bind({});
 Default.args = {
   title: {
     children: "Login",
-    image: "",
+    image: PlaceHolder,
     alt: "Gorila Logo",
   },
   defaultForm: [

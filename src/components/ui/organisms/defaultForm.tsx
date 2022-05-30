@@ -5,7 +5,7 @@ import InputFormGroup, {
   IInputFormGroupProps,
 } from "../molecules/inputFormGroup";
 
-type IDefaultFormProps = {
+export type IDefaultFormProps = {
   title: ITitleProps;
   defaultForm: IInputFormGroupProps[];
   basicButton: IBasicButtonProps;
