@@ -26,6 +26,7 @@ function Home() {
       pageTitle={{ title: "Carteira de Investimentos" }}
       form={{
         inlineForm: [
+          fixedTotal,
           <InlineSelect
             key={0}
             select={{
@@ -46,9 +47,10 @@ function Home() {
               placeholder: "Valor",
               name: "value",
               onValueChange: (value) => {
+                console.log(parseFloat(value));
                 setInvestmentForm({
                   ...investmentForm,
-                  value: value,
+                  value: (parseFloat(value) * 100).toString(),
                 });
               },
               currency: "R$",
@@ -127,6 +129,17 @@ function Home() {
         showChart: fixedTotal != 0 || variableTotal != 0,
         title: "Resumo da Carteira",
         chart: {
+          options: {
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: function ({ formattedValue }) {
+                    return "R$" + formattedValue;
+                  },
+                },
+              },
+            },
+          },
           data: {
             labels: [
               `Renda Fixa ${fixedTotalPerc.toFixed(2)}%`,

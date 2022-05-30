@@ -39,7 +39,6 @@ const BasicInput = (props: IBasicInputProps): React.ReactElement =>
       prefix={props.currency}
       className={["form-control", props.className].join(" ")}
       inputMode="numeric"
-      decimalScale={2}
       onChange={(e) => (props.onChange ? props.onChange(e) : {})}
       onValueChange={(values) => {
         const { value } = values;

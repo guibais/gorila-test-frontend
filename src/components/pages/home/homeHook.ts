@@ -33,13 +33,23 @@ export const useHomeHook = () => {
     setIsLoading(true);
     const resp = await investmentService.getAll();
     const incomes = resp.data as InvestmentsReturnedViewModel;
-    setFixedInvestments(incomes.fixedInvestments);
-    setVariableInvestments(incomes.variableInvestments);
-    setFixedTotal(incomes.totalFixed);
+    setFixedInvestments(
+      incomes.fixedInvestments.map((x) => ({
+        ...x,
+        value: (parseInt(x.value) / 100).toString(),
+      }))
+    );
+    setVariableInvestments(
+      incomes.variableInvestments.map((x) => ({
+        ...x,
+        value: (parseInt(x.value) / 100).toString(),
+      }))
+    );
+    setFixedTotal(incomes.totalFixed / 100);
     setFixedTotalPerc(
       (100 / (incomes.totalFixed + incomes.totalVariable)) * incomes.totalFixed
     );
-    setVariableTotal(incomes.totalVariable);
+    setVariableTotal(incomes.totalVariable / 100);
     setVariableTotalPerc(
       (100 / (incomes.totalFixed + incomes.totalVariable)) *
         incomes.totalVariable

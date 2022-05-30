@@ -86,6 +86,7 @@ Default.args = {
     showChart: true,
     title: "Resumo da Carteira",
     chart: {
+      options: {},
       data: {
         labels: [`Renda Fixa 20%`, `Renda Variável 80%`],
         datasets: [
