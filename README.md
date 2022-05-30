@@ -3,7 +3,6 @@
 </p>
 
   <p align="center">Aplicação desenvolvida para a empresa Gorila</p>
-## Description
 
 [Backend](https://github.com/guibais/gorila-test-backend) Ver Repositório do Backend.
 
