@@ -6,7 +6,7 @@ export class ApiImplementation {
 
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: "http://localhost:3300",
+      baseURL: import.meta.env.API_URL,
       headers: {
         "Content-type": "application/json",
       },
