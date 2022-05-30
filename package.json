@@ -9,6 +9,7 @@
     "prepare": "husky install",
     "lint": "eslint '*/**/*.{js,ts,tsx}'",
     "test": "jest",
+    "tsc": "tsc",
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

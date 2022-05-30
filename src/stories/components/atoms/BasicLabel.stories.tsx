@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import BasicLabel from "../../../components/ui/atoms/BasicLabel";
+import BasicLabel from "../../../components/ui/atoms/basicLabel";
 import "../../../App.scss";
 
 export default {

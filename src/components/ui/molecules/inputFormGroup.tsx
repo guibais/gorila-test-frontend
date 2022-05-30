@@ -1,6 +1,6 @@
 import * as React from "react";
-import BasicLabel, { IBasicLabelProps } from "../atoms/BasicLabel";
-import BasicInput, { IBasicInputProps } from "../atoms/BasicInput";
+import BasicLabel, { IBasicLabelProps } from "../atoms/basicLabel";
+import BasicInput, { IBasicInputProps } from "../atoms/basicInput";
 
 export type IInputFormGroupProps = {
   label: IBasicLabelProps;

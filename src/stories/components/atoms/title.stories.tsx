@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import "../../../App.scss";
-import Title from "../../../components/ui/atoms/Title";
+import Title from "../../../components/ui/atoms/title";
 
 export default {
   title: "Atoms/Title",

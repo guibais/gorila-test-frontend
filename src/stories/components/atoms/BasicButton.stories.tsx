@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import BasicButton from "../../../components/ui/atoms/BasicButton";
+import BasicButton from "../../../components/ui/atoms/basicButton";
 import "../../../App.scss";
 
 export default {

@@ -1,4 +1,4 @@
-import { ApiImplementation } from "../shared/apiImplementation";
+import { ApiImplementation } from "../shared/ApiImplementation";
 import { LoginViewModel } from "../viewmodel/login.viewmodel";
 import { RegisterViewModel } from "../viewmodel/register.viewmodel";
 import { ResponseViewModel } from "../viewmodel/response.viewmodel";

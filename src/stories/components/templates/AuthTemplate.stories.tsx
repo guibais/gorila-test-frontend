@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import "../../../App.scss";
 import AuthTemplate from "../../../components/ui/templates/authTemplate";
 import PlaceHolder from "../../assets/images/placeholder.png";
-import { ButtonType } from "../../../components/ui/atoms/BasicButton";
+import { ButtonType } from "../../../components/ui/atoms/basicButton";
 
 export default {
   AuthTemplate: "Templates/AuthTemplate",

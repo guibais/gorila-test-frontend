@@ -1,6 +1,6 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
-import BasicButton from "../../components/ui/atoms/BasicButton";
+import BasicButton from "../../components/ui/atoms/basicButton";
 import "@testing-library/jest-dom/extend-expect";
 
 afterEach(cleanup);

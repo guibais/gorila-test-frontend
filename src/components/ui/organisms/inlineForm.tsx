@@ -1,5 +1,5 @@
 import * as React from "react";
-import BasicButton, { IBasicButtonProps } from "../atoms/BasicButton";
+import BasicButton, { IBasicButtonProps } from "../atoms/basicButton";
 
 export type IInlineFormProps = {
   basicButton: IBasicButtonProps;

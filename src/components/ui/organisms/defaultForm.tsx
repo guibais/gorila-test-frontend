@@ -1,6 +1,6 @@
 import * as React from "react";
-import Title, { ITitleProps } from "../atoms/Title";
-import BasicButton, { IBasicButtonProps } from "../atoms/BasicButton";
+import Title, { ITitleProps } from "../atoms/title";
+import BasicButton, { IBasicButtonProps } from "../atoms/basicButton";
 import InputFormGroup, {
   IInputFormGroupProps,
 } from "../molecules/inputFormGroup";

@@ -1,5 +1,5 @@
 import * as React from "react";
-import BasicInput, { IBasicInputProps } from "../atoms/BasicInput";
+import BasicInput, { IBasicInputProps } from "../atoms/basicInput";
 
 export type IInlineInputProps = {
   input: IBasicInputProps;

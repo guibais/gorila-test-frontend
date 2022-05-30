@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import BasicInput from "../../../components/ui/atoms/BasicInput";
+import BasicInput from "../../../components/ui/atoms/basicInput";
 import "../../../App.scss";
 
 export default {

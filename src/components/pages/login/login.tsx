@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import GorilaLogo from "../../../assets/images/LogoGorila.svg";
-import { ButtonType } from "../../ui/atoms/BasicButton";
+import { ButtonType } from "../../ui/atoms/basicButton";
 import { useLoginHook } from "./loginHook";
 import AuthTemplate from "../../ui/templates/authTemplate";
 

@@ -1,4 +1,4 @@
-import BasicButton, { IBasicButtonProps } from "../atoms/BasicButton";
+import BasicButton, { IBasicButtonProps } from "../atoms/basicButton";
 import React from "react";
 
 export type IHeaderProps = {
