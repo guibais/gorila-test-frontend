@@ -29,6 +29,7 @@ export type IBasicInputProps = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => any;
   onValueChange?: (value: string) => any;
   currency?: string;
+  value?: string | number | readonly string[] | undefined;
 };
 
 const BasicInput = (props: IBasicInputProps): React.ReactElement =>
@@ -49,6 +50,7 @@ const BasicInput = (props: IBasicInputProps): React.ReactElement =>
     />
   ) : (
     <Input
+      value={props.value}
       type={props.type}
       onChange={(e) => (props.onChange ? props.onChange(e) : {})}
       className={["form-control", props.className].join(" ")}

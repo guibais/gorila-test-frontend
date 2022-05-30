@@ -8,8 +8,17 @@ import { ButtonType } from "../ui/atoms/BasicButton";
 import { LocalService } from "../../services/local.service";
 import useValidator from "../../shared/hooks/useValidator";
 import { LoginViewModel } from "../../viewmodel/login.viewmodel";
+import styled from "styled-components";
 
-function Login() {
+const LoginStyle = styled.div`
+  height: 100vh;
+  div {
+    align-content: center;
+    justify-content: center;
+  }
+`;
+
+const Login = () => {
   const userService = new UserService();
   const localService = new LocalService();
 
@@ -45,9 +54,9 @@ function Login() {
   };
 
   return (
-    <div className="container">
-      <div className="row justify-content-md-center my-auto h-100 align-middle">
-        <div className="col-4">
+    <LoginStyle className="container">
+      <div className="row my-auto h-100">
+        <div className="col-md-4">
           <DefaultForm
             title={{
               children: "Login",
@@ -112,8 +121,8 @@ function Login() {
           />
         </div>
       </div>
-    </div>
+    </LoginStyle>
   );
-}
+};
 
 export default Login;

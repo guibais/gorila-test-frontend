@@ -8,7 +8,7 @@ export type IInlineFormProps = {
 
 function InlineForm(props: IInlineFormProps): React.ReactElement {
   return (
-    <form className="row">
+    <form className="row w-100 d-flex justify-content-center">
       {props.inlineForm.map((el, i) => (
         <React.Fragment key={i}>{el}</React.Fragment>
       ))}

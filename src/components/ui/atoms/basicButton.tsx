@@ -17,19 +17,26 @@ export type IBasicButtonProps = {
   isOutlined?: boolean;
 };
 
-function BasicButton(props: IBasicButtonProps): React.ReactElement {
-  const BasicButtonStyle = styled.button`
-    &:focus {
-      box-shadow: none;
-    }
-    &:hover {
-      ${props.isOutlined ? "" : "background-color: #4c88e2;"}
-    }
-    ${props.isOutlined ? "" : "background-color: #174994;"}
-  `;
+const BasicButtonStyle = styled.button<{ isOutlined?: boolean }>`
+  &:focus {
+    box-shadow: none;
+  }
+  &:hover {
+    background-color: #1ec0c6;
+    border-color: #1ec0c6;
+  }
+  ${(props) => (props.isOutlined ? "color:" : "background-color:")} #168f93;
+  border-color: #168f93;
+  &:disabled {
+    ${(props) => (props.isOutlined ? "color:" : "background-color:")} #18686b;
+    border-color: #18686b;
+  }
+`;
 
+const BasicButton = (props: IBasicButtonProps): React.ReactElement => {
   return (
     <BasicButtonStyle
+      isOutlined={props.isOutlined}
       type={props.type}
       onClick={(e) => (props.onClick ? props.onClick(e) : {})}
       className={[
@@ -48,7 +55,7 @@ function BasicButton(props: IBasicButtonProps): React.ReactElement {
       )}
     </BasicButtonStyle>
   );
-}
+};
 BasicButton.defaultProps = {
   className: "",
   disabled: false,

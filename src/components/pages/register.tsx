@@ -7,8 +7,17 @@ import { UserService } from "../../services/user.service";
 import { ButtonType } from "../ui/atoms/BasicButton";
 import { LocalService } from "../../services/local.service";
 import useValidator from "../../shared/hooks/useValidator";
+import styled from "styled-components";
 
-function Login() {
+const RegisterStyle = styled.div`
+  height: 100vh;
+  div {
+    align-content: center;
+    justify-content: center;
+  }
+`;
+
+const Register = () => {
   const userService = new UserService();
   const localService = new LocalService();
 
@@ -42,7 +51,7 @@ function Login() {
   };
 
   return (
-    <div className="container">
+    <RegisterStyle className="container">
       <div className="row justify-content-md-center my-auto h-100 align-middle">
         <div className="col-4">
           <DefaultForm
@@ -126,8 +135,8 @@ function Login() {
           />
         </div>
       </div>
-    </div>
+    </RegisterStyle>
   );
-}
+};
 
-export default Login;
+export default Register;

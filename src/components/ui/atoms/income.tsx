@@ -11,8 +11,11 @@ export type IIncomeProps = {
   currency?: string;
   isLoading?: boolean;
 };
-const IncomeStyle = styled.li`
-  align-items: center;
+const IncomeStyle = styled.div`
+  border: none;
+  li {
+    align-items: center;
+  }
 `;
 
 const PillStyle = styled.span`
@@ -38,6 +41,12 @@ const SkeletonStyle = styled.div`
   }
 `;
 
+const SpanActionStyle = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const Income = (props: IIncomeProps): React.ReactElement => {
   if (props.isLoading) {
     return (
@@ -48,26 +57,30 @@ const Income = (props: IIncomeProps): React.ReactElement => {
   }
 
   return (
-    <div className="list-group-item">
-      <IncomeStyle className="d-flex w-100 justify-content-between">
-        {props.date ? (
-          <PillStyle className="badge rounded-pill bg-success">
-            <span className="visually-hidden"></span>
-          </PillStyle>
-        ) : null}
-        {props.date ? [format(new Date(props.date), "dd-MM-yyyy")] : null}{" "}
-        {props.currency ? props.currency : ""}
-        {props.value}
-        {props.action ? (
-          <ActionButton
-            className="btn btn-danger"
-            onClick={(e) => (props.action ? props.action(e) : {})}
-          >
-            <FaTrash />
-          </ActionButton>
-        ) : null}
-      </IncomeStyle>
-    </div>
+    <IncomeStyle className="list-group-item">
+      <li className="d-flex w-100 justify-content-between">
+        <span>
+          {props.date ? (
+            <PillStyle className="badge rounded-pill bg-success">
+              <span className="visually-hidden"></span>
+            </PillStyle>
+          ) : null}
+          {props.date ? [format(new Date(props.date), "dd-MM-yyyy")] : null}{" "}
+        </span>
+        <SpanActionStyle>
+          {props.currency ? props.currency : ""}
+          {props.value}
+          {props.action ? (
+            <ActionButton
+              className="btn btn-danger"
+              onClick={(e) => (props.action ? props.action(e) : {})}
+            >
+              <FaTrash />
+            </ActionButton>
+          ) : null}
+        </SpanActionStyle>
+      </li>
+    </IncomeStyle>
   );
 };
 

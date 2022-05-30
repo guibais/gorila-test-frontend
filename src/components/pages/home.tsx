@@ -144,6 +144,7 @@ function Home() {
           <InlineInput
             key={2}
             input={{
+              value: investmentForm.date.toISOString().substring(0, 10),
               placeholder: "Data da Compra",
               name: "date",
               type: "date",
@@ -172,7 +173,7 @@ function Home() {
           },
         }}
       />
-      <Incomes className="incomes">
+      <Incomes className="incomes w-100">
         <IncomePanel
           list={[
             {
