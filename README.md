@@ -4,7 +4,7 @@
 
   <p align="center">Aplicação desenvolvida para a empresa Gorila</p>
 
-[Backend](https://github.com/guibais/gorila-test-backend) Ver Repositório do Backend.
+[Ver Repositório do Backend](https://github.com/guibais/gorila-test-backend)
 
 ## Instalação
 
